@@ -1,5 +1,6 @@
 package com.lgy.dialogmanager.builder.base;
 
+import com.lgy.dialogmanager.DialogManager;
 import com.lgy.dialogmanager.dialog.base.DialogInterface;
 
 /**
@@ -12,7 +13,7 @@ import com.lgy.dialogmanager.dialog.base.DialogInterface;
 public interface Builder {
     DialogInterface initDialog();
 
-    void create();
+    void create(DialogManager dialogManager);
 
     void show();
 

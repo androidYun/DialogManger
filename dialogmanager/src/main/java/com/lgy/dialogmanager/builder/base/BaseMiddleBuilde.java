@@ -1,9 +1,9 @@
 package com.lgy.dialogmanager.builder.base;
 
 import android.content.Context;
-import android.view.View;
 
 import com.lgy.dialogmanager.R;
+import com.lgy.dialogmanager.builder.listener.OnClickListener;
 
 /**
  * Created by ${lgy} on 2018/4/1609:31
@@ -13,9 +13,9 @@ import com.lgy.dialogmanager.R;
  */
 
 public abstract class BaseMiddleBuilde<T> extends BaseBulder<T> {
-    private View.OnClickListener onCancelClickListener;
+    private OnClickListener onCancelClickListener;
 
-    private View.OnClickListener onConfirmClickListener;
+    private OnClickListener onConfirmClickListener;
 
     protected String title;//标题
 
@@ -111,16 +111,16 @@ public abstract class BaseMiddleBuilde<T> extends BaseBulder<T> {
     }
 
 
-    public View.OnClickListener getOnCancelClickListener() {
+    public OnClickListener getOnCancelClickListener() {
         return onCancelClickListener;
     }
 
-    public T setOnCancelClickListener(View.OnClickListener onCancelClickListener) {
+    public T setOnCancelClickListener(OnClickListener onCancelClickListener) {
         this.onCancelClickListener = onCancelClickListener;
         return t;
     }
 
-    public View.OnClickListener getOnConfirmClickListener() {
+    public OnClickListener getOnConfirmClickListener() {
         return onConfirmClickListener;
     }
 
@@ -133,7 +133,7 @@ public abstract class BaseMiddleBuilde<T> extends BaseBulder<T> {
         return t;
     }
 
-    public T setOnConfirmClickListener(View.OnClickListener onConfirmClickListener) {
+    public T setOnConfirmClickListener(OnClickListener onConfirmClickListener) {
         this.onConfirmClickListener = onConfirmClickListener;
         return t;
     }
@@ -142,9 +142,6 @@ public abstract class BaseMiddleBuilde<T> extends BaseBulder<T> {
     protected int getContentViewId() {
         return R.layout.layout_middle_alert;
     }
-
-
-
 
     @Override
     protected T getBuilder() {

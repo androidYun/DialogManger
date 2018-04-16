@@ -20,11 +20,11 @@ public class DialogManager {
      * <p>
      * 3，创建AlertManager
      */
-    public Builder builder;
+    private Builder builder;
 
     public DialogManager(Builder builder) {
         this.builder = builder;
-        builder.create();
+        builder.create(this);
     }
 
     public static final class CreateBuilder {

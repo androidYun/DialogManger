@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.lgy.dialogmanager.DialogManager;
 import com.lgy.dialogmanager.dialog.base.DialogInterface;
 
 /**
@@ -19,6 +20,8 @@ public abstract class BaseBulder<T> implements Builder {
     private Context context;
 
     private Dialog dialog;
+
+    private DialogManager dialogManager;
 
     public BaseBulder(Context context) {
         this.context = context;
@@ -44,6 +47,14 @@ public abstract class BaseBulder<T> implements Builder {
         this.dialog = dialog;
     }
 
+    public DialogManager getDialogManager() {
+        return dialogManager;
+    }
+
+    public void setDialogManager(DialogManager dialogManager) {
+        this.dialogManager = dialogManager;
+    }
+
     @Override
     public void show() {
         if (dialog != null && !dialog.isShowing()) {
@@ -62,14 +73,12 @@ public abstract class BaseBulder<T> implements Builder {
 
     protected abstract T getBuilder();
 
-    protected void init() {//等加载好布局之后  就行加载布局组件
+
+    @Override
+    public void create(DialogManager dialogManager) {//等加载好布局之后  就行加载布局组件
+        this.dialogManager = dialogManager;
         DialogInterface dialog = initDialog();//创建对话框
         dialog.inflateView();
         dialog.controllerView();
-    }
-
-    @Override
-    public void create() {
-        init();
     }
 }

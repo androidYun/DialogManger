@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.lgy.dialogmanager.DialogManager;
 import com.lgy.dialogmanager.builder.ContentBuilder;
 import com.lgy.dialogmanager.builder.EditorBuilder;
 import com.lgy.dialogmanager.builder.ListBuilder;
+import com.lgy.dialogmanager.builder.listener.OnClickListener;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;
@@ -42,7 +44,19 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case 2:
-                        new DialogManager.CreateBuilder(new ListBuilder(MainActivity.this).setTitle("李桂云").setTitle("记录").setCancelText("取消").setShowBothBtn(false).setListData(mListData)).create().show();
+                        new DialogManager.CreateBuilder(new ListBuilder(MainActivity.this).setTitle("李桂云").setTitle("记录").setCancelText("取消").setShowBothBtn(true).setListData(mListData).setOnConfirmClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v, DialogManager dialogManager) {
+                                dialogManager.dismiss();
+                                Toast.makeText(MainActivity.this, "显示确定提示", Toast.LENGTH_LONG).show();
+                            }
+                        }).setOnCancelClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v, DialogManager dialogManager) {
+                                dialogManager.dismiss();
+                                Toast.makeText(MainActivity.this, "显示取消提示", Toast.LENGTH_LONG).show();
+                            }
+                        })).create().show();
                         break;
                 }
             }

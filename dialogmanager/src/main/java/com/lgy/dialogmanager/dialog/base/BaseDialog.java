@@ -75,7 +75,7 @@ public class BaseDialog implements DialogInterface {
             @Override
             public void onClick(View v) {
                 if (baseMiddleBuilde.getOnCancelClickListener() != null) {
-                    baseMiddleBuilde.getOnCancelClickListener().onClick(v);
+                    baseMiddleBuilde.getOnCancelClickListener().onClick(v,baseMiddleBuilde.getDialogManager());
                 }
             }
         });
@@ -83,7 +83,7 @@ public class BaseDialog implements DialogInterface {
             @Override
             public void onClick(View v) {
                 if (baseMiddleBuilde.getOnConfirmClickListener() != null) {
-                    baseMiddleBuilde.getOnConfirmClickListener().onClick(v);
+                    baseMiddleBuilde.getOnConfirmClickListener().onClick(v,baseMiddleBuilde.getDialogManager());
                 }
             }
         });
@@ -91,7 +91,7 @@ public class BaseDialog implements DialogInterface {
             @Override
             public void onClick(View v) {
                 if (baseMiddleBuilde.getOnConfirmClickListener() != null) {
-                    baseMiddleBuilde.getOnConfirmClickListener().onClick(v);
+                    baseMiddleBuilde.getOnConfirmClickListener().onClick(v,baseMiddleBuilde.getDialogManager());
                 }
             }
         });
