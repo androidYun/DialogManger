@@ -5,6 +5,7 @@ import android.content.Context;
 import com.lgy.dialogmanager.R;
 import com.lgy.dialogmanager.builder.base.BaseMiddleBuilde;
 import com.lgy.dialogmanager.dialog.ContentDialog;
+import com.lgy.dialogmanager.dialog.base.DialogInterface;
 
 /**
  * Created by ${lgy} on 2018/4/1609:37
@@ -20,6 +21,7 @@ public class ContentBuilder extends BaseMiddleBuilde<ContentBuilder> {
 
     public ContentBuilder(Context context) {
         super(context);
+
     }
 
     @Override
@@ -42,13 +44,15 @@ public class ContentBuilder extends BaseMiddleBuilde<ContentBuilder> {
         return messageColor;
     }
 
+
     public ContentBuilder setMessageColor(int messageColor) {
         this.messageColor = messageColor;
         return this;
     }
 
     @Override
-    public void create() {
-        new ContentDialog(this);
+    public DialogInterface initDialog() {
+        return new ContentDialog(this);
     }
+
 }

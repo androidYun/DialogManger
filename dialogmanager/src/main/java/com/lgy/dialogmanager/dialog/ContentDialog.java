@@ -30,8 +30,6 @@ public class ContentDialog extends BaseDialog {
         super(baseMiddleBuilde);
         this.baseMiddleBuilde = (ContentBuilder) baseMiddleBuilde;
         dialog = baseMiddleBuilde.getDialog();
-        inflateView();
-        controllerView();
     }
 
     @Override

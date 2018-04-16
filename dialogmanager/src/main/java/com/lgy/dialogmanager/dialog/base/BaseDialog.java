@@ -22,9 +22,9 @@ public class BaseDialog implements DialogInterface {
 
     private TextView tvCancel;//取消按钮
 
-    private TextView tvSingleConfirm;//单个确定按钮
+    protected TextView tvSingleConfirm;//单个确定按钮
 
-    private TextView tvBothConfirm;//爽个确定按钮
+    protected TextView tvBothConfirm;//爽个确定按钮
 
     private LinearLayout lvBothBtn;
 

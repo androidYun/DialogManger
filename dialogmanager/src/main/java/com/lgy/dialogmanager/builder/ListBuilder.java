@@ -3,7 +3,8 @@ package com.lgy.dialogmanager.builder;
 import android.content.Context;
 
 import com.lgy.dialogmanager.builder.base.BaseMiddleBuilde;
-import com.lgy.dialogmanager.dialog.ContentDialog;
+import com.lgy.dialogmanager.dialog.ListDialog;
+import com.lgy.dialogmanager.dialog.base.DialogInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,21 +21,25 @@ public class ListBuilder extends BaseMiddleBuilde<ListBuilder> {
 
     public ListBuilder(Context context) {
         super(context);
+       mListData = new ArrayList<>();
     }
 
-    @Override
-    protected ListBuilder getBuilder() {
-        mListData = new ArrayList<>();
+    public List<String> getListData() {
+        return mListData;
+    }
+
+    public ListBuilder setListData(List<String> list) {
+        mListData.clear();
+        mListData.addAll(list);
         return this;
     }
-
-    public ListBuilder(Context context, List<String> mListData) {
-        super(context);
-        this.mListData = mListData;
-    }
-
     @Override
-    public void create() {
-        new ContentDialog(this);
+    protected ListBuilder getBuilder() {
+        return this;
     }
+    @Override
+    public DialogInterface initDialog() {
+        return new ListDialog(this);
+    }
+
 }

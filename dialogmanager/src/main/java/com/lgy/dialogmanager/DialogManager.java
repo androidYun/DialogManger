@@ -1,6 +1,5 @@
 package com.lgy.dialogmanager;
 
-import com.lgy.dialogmanager.builder.ContentBuilder;
 import com.lgy.dialogmanager.builder.base.Builder;
 
 /**
@@ -28,15 +27,16 @@ public class DialogManager {
         builder.create();
     }
 
-    public static final class CreateContentBuilder {
-        ContentBuilder contentBuilder;
+    public static final class CreateBuilder {
+        Builder builder;
 
-        public CreateContentBuilder(ContentBuilder contentBuilder) {
-            this.contentBuilder = contentBuilder;
+
+        public CreateBuilder(Builder builder) {
+            this.builder = builder;
         }
 
         public DialogManager create() {
-            return new DialogManager(contentBuilder);
+            return new DialogManager(builder);
         }
     }
 

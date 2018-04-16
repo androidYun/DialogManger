@@ -1,5 +1,7 @@
 package com.lgy.dialogmanager.builder.base;
 
+import com.lgy.dialogmanager.dialog.base.DialogInterface;
+
 /**
  * Created by ${lgy} on 2018/4/1313:23
  * 邮箱1343168198@qq.com
@@ -8,6 +10,8 @@ package com.lgy.dialogmanager.builder.base;
  */
 
 public interface Builder {
+    DialogInterface initDialog();
+
     void create();
 
     void show();

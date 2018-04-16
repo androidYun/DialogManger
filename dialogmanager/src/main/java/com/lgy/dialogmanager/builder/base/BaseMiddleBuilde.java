@@ -143,4 +143,11 @@ public abstract class BaseMiddleBuilde<T> extends BaseBulder<T> {
         return R.layout.layout_middle_alert;
     }
 
+
+
+
+    @Override
+    protected T getBuilder() {
+        return null;
+    }
 }
