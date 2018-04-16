@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="default_title_color">#000000</color>
+    <!--取消按钮颜色-->
+    <color name="default_cancel_color">#007aff</color>
+    <!--确定按钮颜色-->
+    <color name="default_confirm_color">#ff3b30</color>
+    <!--消息颜色-->
+    <color name="default_message_color">#000000</color>
+    <!--覆盖颜色-->
+    <color name="bgColor_overlay">#60000000</color>
+    <!--线条颜色-->
+    <color name="divider_color">#d7d7db</color>
+    <!--窗口背景颜色-->
+    <color name="alert_view_alert_bg">#f8f8f8</color>
+</resources>
